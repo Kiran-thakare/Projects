@@ -1,0 +1,13 @@
+Technology Used
+Frontend – HTML, CSS, JS, Bootstrap , JSP , FontAwsome
+Backend – Servlet , JDBC
+Server – Apache Tomcat
+Database – MySQL
+Tools – Eclipse , MySQL workbench
+
+First add :
+Apache Tomcat server version 
+
+
+second add:
+mysql-connector jar add 
