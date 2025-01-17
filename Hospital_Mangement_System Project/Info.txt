@@ -11,3 +11,78 @@ Apache Tomcat server version
 
 second add:
 mysql-connector jar add 
+
+
+
+MySQL Table :
+
+* Admin Login Are Static 
+username Admin: admin@gmail.com
+password : admin
+
+1.First To create Database and its Name : Hospital_Management_system
+
+2.Create in Database First Table is user details
+ 
+user Table :
+
+CREATE TABLE userdtl (
+  id int PRIMARY KEY   NOT NULL AUTO_INCREMENT,
+  name varchar(45) NOT NULL,
+  email varchar(45) NOT NULL,
+  pass varchar(45) NOT NULL,
+
+) 
+
+
+3.Create Second Table in Database is Doctor table 
+Doctor Table:
+
+CREATE TABLE doctor (
+  id int NOT NULL AUTO_INCREMENT,
+  dname varchar(45) NOT NULL,
+  dob varchar(45) NOT NULL,
+  email varchar(45) NOT NULL,
+  qualification varchar(45) NOT NULL,
+  specialist varchar(45) NOT NULL,
+  mob varchar(45) NOT NULL,
+  pass varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+4.Create Third table in Database is Appointment
+
+Appointment Table:
+
+CREATE TABLE appointment (
+  id int NOT NULL AUTO_INCREMENT,
+  userid int NOT NULL,
+  name varchar(45) NOT NULL,
+  gender varchar(45) NOT NULL,
+  age varchar(45) NOT NULL,
+  app_date varchar(45) NOT NULL,
+  email varchar(45) NOT NULL,
+  phone varchar(45) NOT NULL,
+  diseses varchar(45) NOT NULL,
+  doc_id int NOT NULL,
+  address varchar(400) NOT NULL,
+  status varchar(45) NOT NULL,
+  PRIMARY KEY (id),
+  KEY id_idx (userid),
+  KEY doc_id_idx (doc_id),
+  CONSTRAINT doc_id FOREIGN KEY (doc_id) REFERENCES doctor (id),
+  CONSTRAINT userid FOREIGN KEY (userid) REFERENCES userdtl (id)
+
+);
+
+
+5.Create Fourth table in database Specialist 
+
+Specalist table :
+
+CREATE TABLE specialist (
+  id int NOT NULL AUTO_INCREMENT,
+  sname varchar(45) NOT NULL,
+  PRIMARY KEY (id)
+) ;
+
